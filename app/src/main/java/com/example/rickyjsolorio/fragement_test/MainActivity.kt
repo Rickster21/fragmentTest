@@ -1,23 +1,9 @@
 package com.example.rickyjsolorio.fragement_test
 
-import android.content.Intent
-import android.os.Build.VERSION_CODES.O
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
-import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE
-import android.transition.Fade
-import android.transition.Slide
+import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.ImageButton
-import android.widget.Toast
-
-import com.example.rickyjsolorio.fragement_test.R.drawable.spider
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_blank.*
 
 class MainActivity() : AppCompatActivity(), BlankFragment2.detailsPage, BlankFragment.selcetedAnimal{
@@ -43,22 +29,28 @@ class MainActivity() : AppCompatActivity(), BlankFragment2.detailsPage, BlankFra
             }
 
 
-            fragtrans.add(R.id.fragment_container, fragObject).addToBackStack("yolo").commit()
+            fragtrans.add(R.id.fragment_container, fragObject).addToBackStack(null).commit()
                 //only use add on the first time fragment not the second frag.
 
         }
 
     }     //end of override fun onCreate
 
-    override  fun addFrag(view: View) {
+
+
+    //*********************************************************************************************************************************************************
+
+    override  fun secondFrag(view: View) {
 
 
         this.snake.setOnClickListener {
 
-            goToSpiderListFrag()
+            goToSpiderListFrag()   // this function description is below on this page
         }
 
         this.spider.setOnClickListener {
+
+                   // need to make functions using the custom views making the list view re-usable
 
 
         }
@@ -67,36 +59,40 @@ class MainActivity() : AppCompatActivity(), BlankFragment2.detailsPage, BlankFra
 
         this.fish.setOnClickListener {
 
+                   // need to make functions using the custom views making the list view re-usable
+
+
 
         }
 
 
 
-    }
-    public fun goToSpiderListFrag(){          //function to make the code cleaner in the override functions; it makes a fragment transaction to
-                                                // move to the next fragment when a view is clicked
+    }// end of second frag
+
+    //*********************************************************************************************************************************************************
+
+
+    override fun animalListPage(view: View) {
+
+
+         }//end of animal listpage
+
+    //*********************************************************************************************************************************************************
+
+
+    public fun goToSpiderListFrag(){             //function to make the code cleaner in the override functions; it makes a fragment transaction to
+                                                 // move to the next fragment when a view is clicked
+                                                 //this functoin is used above in the first onlcick listener
+
+
         val frag2 = BlankFragment3()
         val fragmanger = supportFragmentManager     //fragmanger value gets the support library for fragtrans value
         val fragtrans = fragmanger.beginTransaction().replace(R.id.fragment_container,frag2).addToBackStack(null).setTransition(TRANSIT_FRAGMENT_FADE)
         fragtrans.commit()
-
-
     }
 
+    //*********************************************************************************************************************************************************
 
-    override fun fragout(view: View) {
-
-        this.spider.setOnClickListener {
-
-            val ee = BlankFragment2()
-
-            val fragmanger = supportFragmentManager     //fragmanger value gets the support library for fragtrans value
-            val fragtrans = fragmanger.beginTransaction().replace(R.id.fragment_container,ee)
-            fragtrans.commit()
-
-        }
-
-    }
-}// last                                                                                                                                                       curley bracket
+}      // end of main activity                                                                                                                                                curley bracket
 
 

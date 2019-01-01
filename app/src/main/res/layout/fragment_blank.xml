@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="@color/colorPrimary"
-             tools:context=".BlankFragment"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorPrimary"
+              tools:context=".BlankFragment"
               android:orientation="vertical"
-             android:tag="yolo"
+              android:tag="yolo"
 >
 
 
+    <!-- TODO: Update blank fragment layout -->
 
-        <!-- TODO: Update blank fragment layout -->
+
     <ImageButton
             android:layout_width="694dp"
             android:layout_height="0dp"
-            android:text="@string/hello_blank_fragment"
+            android:text="Snake"
+
             android:src="@drawable/snake"
             android:id="@+id/snake"
-            android:onClick= "addFrag"
+            android:onClick="secondFrag"
             android:layout_weight="1"
             android:textAlignment="center"
-
-
-    />
+            android:contentDescription="snake"/>
 
     <ImageButton
             android:layout_width="match_parent"
@@ -31,8 +31,10 @@
             android:text="@string/hello_blank_fragment"
             android:src="@drawable/spider"
             android:id="@+id/spider"
-            android:onClick="fragout"
+            android:onClick="animalListPage"
             android:layout_weight="1"
+            android:textAlignment="center"
+
 
     />
     <ImageButton
@@ -43,10 +45,6 @@
             android:id="@+id/fish"
             android:layout_weight="1"
     />
-
-
-
-
 
 
 

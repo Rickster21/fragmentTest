@@ -1,21 +1,12 @@
 package com.example.rickyjsolorio.fragement_test
 
 
-import android.app.Activity
-import android.app.SearchManager
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.Toast
-import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.fragment_blank.*
-import java.lang.NullPointerException
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,9 +23,9 @@ class BlankFragment : Fragment() {
 
 
 
-    interface selcetedAnimal{
+    interface selcetedAnimal{     // this is implemented in main as an extended function at the top
 
-        public fun addFrag(view: View)
+        public fun secondFrag(view: View)
 
 
   }
